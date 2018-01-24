@@ -1,0 +1,22 @@
+<!-- list -->
+<ul class="nav" ng-controller="mainMenuCtrl">
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span>Navigation</span>
+  </li>
+   <li ng-repeat="menu in menus" class="treeview">
+              <a href class="auto">
+                <span class="pull-right text-muted">
+                  <i class="fa fa-fw fa-angle-right text"></i>
+                  <i class="fa fa-fw fa-angle-down text-active"></i>
+                </span>
+                <i class="{{menu.iconCls}}"></i>
+                <span>{{menu.name}} </span>
+              </a>
+              <ul class="nav nav-sub dk">
+                <li ui-sref-active="active" ng-repeat="subItem in menu.sub">
+                  <a ui-sref="{{subItem.url}}"><i class="{{subItem.iconCls}}"></i>{{subItem.name}}</a>
+                </li>
+              </ul>
+            </li>
+</ul>
+<!-- / list -->

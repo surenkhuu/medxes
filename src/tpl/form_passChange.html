@@ -1,0 +1,60 @@
+
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">Нууц үг солих</h1>
+</div>
+<div class="wrapper-md">
+  <div ng-controller="passChangeFormCtrl">
+<div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading font-bold">Эмч</div>
+        <div class="panel-body">
+            <div class="form-group">
+              <label>Нэвтрэх нэр</label>
+              <input type="text" class="form-control" placeholder="" ng-model="doctor.userid"  
+                  ng-keypress="$event.keyCode == 13 ? checkDoctorInfo(doctor.userid) : null"
+                  required >
+            </div>
+            <div class="form-group" ng-hide="doctor.hideinfo">
+             <label class="col-sm-3 control-label">Шалгах мэдээлэл</label>
+               <div class="col-sm-9 alert ng-isolate-scope alert-info alert-dismissable" >
+                  <span> {{doctor.info}}</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Нууц үг</label>
+              <input type="password" class="form-control" ng-model="doctor.password"   placeholder="Нууц үг">
+            </div>
+            <a type="button" ng-click ="passChangeDoctor();" class="btn btn-sm btn-primary">Хадгалах</a>
+        </div>
+      </div>
+    </div>
+       
+        <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading font-bold">Өвчтөн</div>
+        <div class="panel-body">
+            <div class="form-group">
+              <label>Өвчтөний регистрийн дугаар</label>
+              <input type="text" class="form-control" placeholder="" ng-model="patient.rd"  
+                  ng-keypress="$event.keyCode == 13 ? checkPatientInfo(patient.rd) : null"
+                  required >
+            </div>
+            <div class="form-group" ng-hide="patient.hideinfo">
+             <label class="col-sm-3 control-label">Шалгах мэдээлэл</label>
+               <div class="col-sm-9 alert ng-isolate-scope alert-info alert-dismissable" >
+                  <span> {{patient.info}}</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Нууц үг</label>
+              <input type="password" class="form-control" ng-model="patient.password"  placeholder="Нууц үг">
+            </div>
+            <a type="button" ng-click ="passChangePatient(patient.rd);" class="btn btn-sm btn-info">Хадгалах</a>
+        </div>
+      </div>
+    </div>
+      
+    </div>
+  </div>
+</div> 
