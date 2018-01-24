@@ -1,8 +1,7 @@
-app.controller('FileUploadCtrl', ['$scope', 'FileUploader', function($scope, FileUploader) {
+app.controller('FileUploadCtrl', ['$scope', '$state', 'FileUploader',  function($scope, $state, FileUploader) {
     var uploader = $scope.uploader = new FileUploader({
         url: 'js/controllers/upload.php'
     });
-
     // FILTERS
 
     uploader.filters.push({
@@ -11,7 +10,7 @@ app.controller('FileUploadCtrl', ['$scope', 'FileUploader', function($scope, Fil
             return this.queue.length < 10;
         }
     });
-
+ 
     // CALLBACKS
 
     uploader.onWhenAddingFileFailed = function(item /*{File|FileLikeObject}*/, filter, options) {
@@ -46,6 +45,7 @@ app.controller('FileUploadCtrl', ['$scope', 'FileUploader', function($scope, Fil
     };
     uploader.onCompleteAll = function() {
         console.info('onCompleteAll');
+       
     };
 
     console.info('uploader', uploader);

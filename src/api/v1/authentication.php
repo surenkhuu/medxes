@@ -88,7 +88,7 @@ $app->get('/logout', function() {
     $db = new DbHandler();
     $session = $db->destroySession();
     $response["status"] = "info";
-    $response["message"] = "Гарлаа...";
+    $response["message"] = "Logout...";
     echoResponse(200, $response);
 });
 ?>

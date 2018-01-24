@@ -27,12 +27,12 @@ angular.module('app')
         settings: {
           themeID: 1,
           navbarHeaderColor: 'bg-dark header',//'bg-black',
-          navbarCollapseColor: 'bg-success header',//'bg-white-only',
-          asideColor: 'bg-dark',//'bg-black',bg-light dker'
+          navbarCollapseColor: 'bg-white-only header',//'bg-white-only',
+          asideColor: 'bg-white-only',//'bg-black',bg-light dker'
           headerFixed: true,
-          asideFixed: true,
-          asideFolded: false,
-          asideDock: false,
+          asideFixed: false,
+          asideFolded: true,
+          asideDock: true,
           container: false
         }
       }
@@ -65,10 +65,6 @@ angular.module('app')
             Data.toast(results);
             $state.go('access.signin');
         });
-       }
-      $scope.toPatient =  function(barcode)
-       {
-        $state.go('app.form.patientdata',{'barcode': barcode});
        }
     $scope.IsJsonString  = function (str) {
     try {
@@ -118,6 +114,7 @@ angular.module('app')
         }).then(function (results) {
             if (results.status == "success") {
                 if(results.data){
+
             var obj = $.parseJSON(results.data);
             $.each(obj, function(index, el) {
             if(el.mname != item)
@@ -151,5 +148,5 @@ angular.module('app')
         });
         return menus;
     }
- //   $scope.menus = $scope.getMenu();
+  //  $scope.menus = $scope.getMenu();
       }]);

@@ -19,6 +19,59 @@ angular.module('app')
                   url: '/app',
                   templateUrl: 'tpl/app.html'
               })
+              .state('app.form', {
+                url: '/form',
+                template: '<div ui-view class="fade-in"></div>',
+            }) 
+            .state('app.form.wizard', {
+                url: '/wizard',
+                templateUrl: 'tpl/form_wizard.html'
+            })
+            .state('app.form.fileupload', {
+                url: '/fileupload',
+                templateUrl: 'tpl/form_fileupload.html',
+                resolve: {
+                    deps: ['$ocLazyLoad',
+                      function( $ocLazyLoad){
+                        return $ocLazyLoad.load('angularFileUpload').then(
+                            function(){
+                               return $ocLazyLoad.load('js/controllers/file-upload.js');
+                            }
+                        );
+                    }]
+                }
+            })
+            .state('app.page', {
+                url: '/page',
+                template: '<div ui-view class="fade-in-down"></div>'
+            })
+            .state('app.page.invoice', {
+                url: '/invoice',
+                templateUrl: 'tpl/page_invoice.html'
+                ,
+                 resolve: {
+                    deps: ['$ocLazyLoad',
+                      function( $ocLazyLoad ){
+                        return $ocLazyLoad.load('barcodeGenerator').then(
+                            function(){
+                               return $ocLazyLoad.load('js/controllers/invoice.js');
+                            }
+                        );
+                    }]
+                }
+            })
+            .state('app.table', {
+                url: '/table',
+                template: '<div ui-view></div>'
+            })
+            .state('app.table.static', {
+                url: '/static',
+                templateUrl: 'tpl/table_static.html'
+            })
+            .state('app.table.datatable', {
+                url: '/datatable',
+                templateUrl: 'tpl/table_datatable.html'
+            })
               .state('app.blank', {
                   url: ''
               })
@@ -32,6 +85,34 @@ angular.module('app')
                     }]
                   }
               })
+              .state('app.form.validation', {
+                url: '/validation',
+                templateUrl: 'tpl/form_validation.html',
+                resolve: {
+                    deps: ['$ocLazyLoad',
+                      function( $ocLazyLoad ){
+                        return $ocLazyLoad.load('dynform').then(
+                            function(){
+                               return $ocLazyLoad.load('js/controllers/form.js');
+                            }
+                        );
+                    }]
+                }
+            })
+            .state('app.form.sell', {
+                url: '/validation',
+                templateUrl: 'tpl/form_sell.html',
+                resolve: {
+                    deps: ['$ocLazyLoad',
+                      function( $ocLazyLoad ){
+                        return $ocLazyLoad.load('dynform').then(
+                            function(){
+                               return $ocLazyLoad.load('js/controllers/form_sell.js');
+                            }
+                        );
+                    }]
+                }
+            })
                .state('app.form.passChange', {
                    url:'/passChange',
                   params : {id: null},
@@ -77,31 +158,6 @@ angular.module('app')
                   url: '/404',
                   templateUrl: 'tpl/page_404.html'
               })
-
-              // fullCalendar
-              .state('app.calendar', {
-                  url: '/calendar',
-                  templateUrl: 'tpl/app_calendar.html',
-                  // use resolve to load other dependences
-                  resolve: {
-                      deps: ['$ocLazyLoad', 'uiLoad',
-                        function( $ocLazyLoad, uiLoad ){
-                          return uiLoad.load(
-                            ['vendor/jquery/fullcalendar/fullcalendar.css',
-                              'vendor/jquery/fullcalendar/theme.css',
-                              'vendor/jquery/jquery-ui-1.10.3.custom.min.js',
-                              'vendor/libs/moment.min.js',
-                              'vendor/jquery/fullcalendar/fullcalendar.min.js',
-                              'js/app/calendar/calendar.js']
-                          ).then(
-                            function(){
-                              return $ocLazyLoad.load('ui.calendar');
-                            }
-                          )
-                      }]
-                  }
-              })
-
 
               .state('layout', {
                   abstract: true,

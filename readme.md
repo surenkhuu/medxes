@@ -12,7 +12,7 @@ looks like:
 "src/tpl"
 "src/index.html"
 
-online: http://medxes.io
+online: http://www.medxes.io
 
 2: Use Grunt and Bower
 
