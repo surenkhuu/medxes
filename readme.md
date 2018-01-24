@@ -1,5 +1,5 @@
 
-Medxes - To provide access to next-generation life-saving medicines to people around the world
+The Cure Platform - To provide access to next-generation life-saving medicines to people around the world
 
 1: Please put the files on a server or local host to preview. 
 eg: put the "/src" files under a localhost "src" folder
