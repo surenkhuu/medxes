@@ -46,7 +46,7 @@ label {
 
 small,
 .small {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .badge,
@@ -172,7 +172,7 @@ a:hover .caret-white {
 }
 
 .alert {
-  font-size: 12px;
+  font-size: 13px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
@@ -1094,12 +1094,6 @@ body {
   }
 }
 
-html {
-  background: url('../img/bg.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-}
-
 .app.container {
   padding-right: 0;
   padding-left: 0;
@@ -1204,7 +1198,7 @@ html {
 }
 
 .nav-sub-header a {
-  padding: 18px 20px;
+  padding: 17px 20px;
 }
 
 .navi ul.nav li {
@@ -1219,7 +1213,7 @@ html {
 .navi ul.nav li a {
   position: relative;
   display: block;
-  padding: 13px 20px;
+  padding: 12px 20px;
   font-weight: normal;
   text-transform: none;
   -webkit-transition: background-color 0.2s ease-in-out 0s;
@@ -1237,7 +1231,7 @@ html {
   position: relative;
   float: left;
   width: 40px;
-  margin: -13px -10px;
+  margin: -12px -10px;
   margin-right: 5px;
   overflow: hidden;
   line-height: 40px;
@@ -1254,7 +1248,7 @@ html {
     display: block !important;
   }
   .app-aside-folded .nav-sub-header a {
-    padding: 18px 20px !important;
+    padding: 17px 20px !important;
   }
   .app-aside-folded .navi > ul > li > a {
     position: relative;
@@ -4054,27 +4048,27 @@ a.text-#000000:hover {
 }
 
 .text-lg {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .text-md {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .text-base {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .text-sm {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .text-xs {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .text-xss {
-  font-size: 9px;
+  font-size: 11px;
 }
 
 .text-xxs {
