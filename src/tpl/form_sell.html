@@ -1,5 +1,5 @@
 <div class="bg-light lter b-b wrapper-md">
-        <h1 class="m-n font-thin h3">Sell</h1>
+        <h1 class="m-n font-thin h3">Exchange</h1>
       </div>
       <div class="wrapper-md">
         <div ng-controller="FormSellCtrl">
@@ -8,9 +8,30 @@
               <form name="form" class="form-validation">
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <span class="h4">Sell</span>
+                    <span class="h4">Exchange</span>
                   </div>
                   <div class="panel-body">
+                      <div class="col-md-12">
+                          <div class="panel panel-default">
+                            <div class="panel-heading font-bold">Compose</div>
+                            <div class="panel-body">
+                              <div ui-jq="plot" ui-options="
+                                [
+                                  { data: {{d0_1}}, label: 'LiverCoin', points: { show: true }, lines: { show: true, fill: true, fillColor: { colors: [{ opacity: 0.1 }, { opacity: 0.1}] } } }, 
+                                ],
+                                {
+                                  colors: [ '{{app.color.info}}','{{app.color.warning}}' ],
+                                  series: { shadowSize: 2 },
+                                  xaxis:{ font: { color: '#ccc' } },
+                                  yaxis:{ font: { color: '#ccc' } },
+                                  grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+                                  tooltip: true,
+                                  tooltipOpts: { content: '%s of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 0, y: 20 } }
+                                }
+                              " style="height:240px"></div>
+                            </div>                  
+                          </div>
+                        </div>
                         <div class="form-group">
                                 <label>Price:  $12 </label>
                         </div>
@@ -27,8 +48,9 @@
                       </label>
                     </div>
                   </div>
-                  <footer class="panel-footer text-right bg-light lter">
+                  <footer class="panel-footer text-left bg-light lter">
                     <button type="submit" class="btn btn-success" ng-disabled="form.$invalid">Sell</button>
+                    <button type="submit" class="btn btn-danger" ng-disabled="form.$invalid">Buy</button>
                   </footer>
                 </div>
               </form>

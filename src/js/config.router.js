@@ -86,7 +86,7 @@ angular.module('app')
                   }
               })
               .state('app.form.validation', {
-                url: '/validation',
+                url: '/donate',
                 templateUrl: 'tpl/form_validation.html',
                 resolve: {
                     deps: ['$ocLazyLoad',
@@ -100,7 +100,7 @@ angular.module('app')
                 }
             })
             .state('app.form.sell', {
-                url: '/validation',
+                url: '/exchange',
                 templateUrl: 'tpl/form_sell.html',
                 resolve: {
                     deps: ['$ocLazyLoad',
