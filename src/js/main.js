@@ -31,7 +31,7 @@ angular.module('app')
           asideColor: 'bg-white-only',//'bg-black',bg-light dker'
           headerFixed: true,
           asideFixed: false,
-          asideFolded: true,
+          asideFolded: false,
           asideDock: true,
           container: false
         }
